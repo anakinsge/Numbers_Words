@@ -68,7 +68,7 @@ class Numbers_Words_Locale_es extends Numbers_Words
      * @var string
      * @access public
      */
-    var $lang_native = 'Espa駉l';
+    var $lang_native = 'Espa帽ol';
 
     /**
      * The word for the minus sign
@@ -85,16 +85,16 @@ class Numbers_Words_Locale_es extends Numbers_Words
     var $_exponent = array(
         0 => array('',''),
         3 => array('mil','mil'),
-        6 => array('mill髇','millones'),
-       12 => array('bill髇','billones'),
-       18 => array('tril髇','trillones'),
-       24 => array('cuatrill髇','cuatrillones'),
-       30 => array('quintill髇','quintillones'),
-       36 => array('sextill髇','sextillones'),
-       42 => array('septill髇','septillones'),
-       48 => array('octall髇','octallones'),
-       54 => array('nonall髇','nonallones'),
-       60 => array('decall髇','decallones'),
+        6 => array('mill贸n','millones'),
+       12 => array('bill贸n','billones'),
+       18 => array('tril贸n','trillones'),
+       24 => array('cuatrill贸n','cuatrillones'),
+       30 => array('quintill贸n','quintillones'),
+       36 => array('sextill贸n','sextillones'),
+       42 => array('septill贸n','septillones'),
+       48 => array('octall贸n','octallones'),
+       54 => array('nonall贸n','nonallones'),
+       60 => array('decall贸n','decallones'),
         );
     /**
      * The array containing the digits (indexed by the digits themselves).
@@ -176,8 +176,8 @@ class Numbers_Words_Locale_es extends Numbers_Words
         }
 
         // values for digits, tens and hundreds
-        $h = floor(($num / 100) % 10);
-        $t = floor(($num / 10) % 10);
+        $h = floor(intdiv($num, 100) % 10);
+        $t = floor(intdiv($num, 10) % 10);
         $d = floor($num % 10);
 
         // cientos: doscientos, trescientos, etc...
@@ -242,7 +242,7 @@ class Numbers_Words_Locale_es extends Numbers_Words
                 $ret .= $this->_sep . 'veinte';
             } else {
                 if (($power > 0) and ($d == 1)) {
-                    $ret .= $this->_sep . 'veinti鷑';
+                    $ret .= $this->_sep . 'veinti煤n';
                 } else {
                     $ret .= $this->_sep . 'veinti' . $this->_digits[$d];
                 }
